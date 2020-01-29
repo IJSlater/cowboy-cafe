@@ -28,7 +28,7 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool bread;
+        private bool bread=true;
         /// <summary>
         /// Determins if the sandwich has bread.
         /// </summary>
@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
             set { bread = value; }
         }
 
-        private bool pickle;
+        private bool pickle=true;
         /// <summary>
         /// Determins if the sandwich has pickles.
         /// </summary>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class Trailburger
+    public class TrailBurger
     {
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace CowboyCafe.Data
             set { mustard = value; }
         }
 
-        private bool pickle;
+        private bool pickle = true;
         /// <summary>
         /// Determins if the burger has pickles.
         /// </summary>
@@ -69,7 +69,7 @@ namespace CowboyCafe.Data
             set { pickle = value; }
         }
 
-        private bool cheese;
+        private bool cheese = true;
         /// <summary>
         /// Determins if the sandwich has pickles.
         /// </summary>
