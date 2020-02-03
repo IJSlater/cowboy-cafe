@@ -4,9 +4,8 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class BakedBeans:Side
+    public class ChiliCheeseFries : Side
     {
-
 
         /// <summary>
         /// Returns the items price
@@ -17,15 +16,15 @@ namespace CowboyCafe.Data
             {
                 if (Size == Size.Small)
                 {
-                    return 1.59;
+                    return 1.99;
                 }
                 else if (Size == Size.Medium)
                 {
-                    return 1.79;
+                    return 2.99;
                 }
                 else if (Size == Size.Large)
                 {
-                    return 1.99;
+                    return 3.99;
                 }
                 throw new NotImplementedException("unknown size");
             }
@@ -40,17 +39,17 @@ namespace CowboyCafe.Data
             {
                 if (Size == Size.Small)
                 {
-                    return 312;
+                    return 433;
                 }
                 else if (Size == Size.Medium)
                 {
-                    return 378;
+                    return 524;
                 }
                 else if (Size == Size.Large)
                 {
                     return 610;
                 }
-                throw new NotImplementedException("unknown size");
+                throw new NotImplementedException("unknown size"); ;
             }
         }
 
