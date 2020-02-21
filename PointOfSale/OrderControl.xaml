@@ -20,14 +20,38 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <TextBlock TextAlignment="Center">Enrees</TextBlock>
-            <Button Name="AngryChickenButton">AngryChicken</Button>
-            <Button>CowpokeChili</Button>
+            <Button Name="AngryChickenButton">Angry Chicken</Button>
+            <Button Name="CowpokeChiliButton">CowPoke Chili</Button>
+            <Button Name="DakotaDoubleButton">Dakto Double</Button>
+            <Button Name="PecosPulledPorkButton">Pecos Pulled Pork</Button>
+            <Button Name="RustlersRibsButton">Rustlers Ribs</Button>
+            <Button Name="TexasTripleButton">Texas Triple</Button>
+            <Button Name="TrailBurgerButton">Trail Burger</Button>
+            
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Enrees</TextBlock>
+            <TextBlock TextAlignment="Center">sides</TextBlock>
+            <Button Name="ChiliCheeseFriesButton">ChillieCheese Fries</Button>
+            <Button Name="CornDodgerButton">Corn Dodgers</Button>
+            <Button Name="PandeCampoButton">Pan de Campo</Button>
+            
+
         </StackPanel>
 
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+            <Button Name="JerkedSodeButton">Jerked Soda</Button>
+            <Button Name="CowboyCoffeButton">Cowboy Coffe</Button>
+            <Button Name="TexasTeaButton">Texas Tea</Button>
+            <Button Name="WaterButton">Water</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3">
+            <TextBlock TextAlignment="Center">Ticket</TextBlock>
+            <ListBox Name="ticket"/>
+
+        </StackPanel>
 
     </Grid>
 
