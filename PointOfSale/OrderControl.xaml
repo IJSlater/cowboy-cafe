@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <TextBlock TextAlignment="Center">Enrees</TextBlock>
-            <Button Name="AngryChickenButton">Angry Chicken</Button>
+            <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
             <Button Name="CowpokeChiliButton">CowPoke Chili</Button>
             <Button Name="DakotaDoubleButton">Dakto Double</Button>
             <Button Name="PecosPulledPorkButton">Pecos Pulled Pork</Button>

@@ -1,4 +1,5 @@
 ﻿using System;
+using CowboyCafe.Data;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,11 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+        }
+
+        private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
+        {
+            ticket.Items.Add(new AngryChicken().ToString());
         }
     }
 }
