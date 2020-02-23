@@ -36,6 +36,14 @@ namespace CowboyCafe.Data
                 return new List<string>();
             }
         }
-
+        /// <summary>
+        /// To string method tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            String title = "Rustlers Ribs";
+            return title;
+        }
     }
 }

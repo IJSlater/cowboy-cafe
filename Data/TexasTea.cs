@@ -99,5 +99,15 @@ namespace CowboyCafe.Data
 
             }
         }
+        /// <summary>
+        /// To string method tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            String title = "Texas Tea";
+            title += $", { Enum.GetName(typeof(Size), Size)}";
+            return title;
+        }
     }
 }

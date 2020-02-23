@@ -153,5 +153,15 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// To string method tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            String title = "Texas Triple Burger";
+            return title;
+        }
     }
 }

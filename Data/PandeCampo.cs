@@ -53,6 +53,16 @@ namespace CowboyCafe.Data
                 throw new NotImplementedException("unknown size");
             }
         }
+        /// <summary>
+        /// To string method tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            String title = "Pan de Campo";
+            title += $", { Enum.GetName(typeof(Size), Size)}";
+            return title;
+        }
 
     }
 }

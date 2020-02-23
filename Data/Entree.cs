@@ -6,6 +6,8 @@ namespace CowboyCafe.Data
 {
     public abstract class Entree
     {
+        
+
         /// <summary>
         /// skeleton parameter for price variable
         /// </summary>
@@ -21,6 +23,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        
 
     }
 }

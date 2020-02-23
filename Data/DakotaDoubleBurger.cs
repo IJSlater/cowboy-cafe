@@ -129,5 +129,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// To string method used for tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
+
     }
 }

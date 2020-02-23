@@ -55,7 +55,33 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// To string method tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            String title = "Jerked Soda";
+            title += $", { Enum.GetName(typeof(SodaFlavor), Flavor)}";
 
+            switch (Size)
+            {
+                case Size.Small:
+                    title += ", small";
+                    break;
+                case Size.Medium:
+                    title += ", medium";
+                    break;
+                case Size.Large:
+                    title += ", large";
+                    break;
+                default:
+                    throw new NotImplementedException("unknown size");
+
+            }
+
+            return title;
+        }
 
     }
 }

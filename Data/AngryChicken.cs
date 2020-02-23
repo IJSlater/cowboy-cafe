@@ -6,6 +6,9 @@ namespace CowboyCafe.Data
 {
     public class AngryChicken : Entree
     {
+
+
+      
         /// <summary>
         /// The price of the Sandwich
         /// </summary>
@@ -59,6 +62,14 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+        /// <summary>
+        /// Changs to string to be the 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
         }
     }
 }

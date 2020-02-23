@@ -95,6 +95,14 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// To string method tickets
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            String title = "Trail Burger";
+            return title;
+        }
     }
 }
