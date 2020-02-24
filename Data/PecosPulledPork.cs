@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Pecos Pulled Pork : Entree
+* Data structure to resemble Pecos Pulled Pork entree 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

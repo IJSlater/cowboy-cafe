@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Entree
+*Parent class for Entres to inherit from 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

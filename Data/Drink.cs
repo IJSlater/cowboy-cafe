@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Drink
+*Parent class for dirnks to inherit from 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

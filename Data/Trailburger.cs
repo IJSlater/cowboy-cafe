@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* TrailBurger : Entree
+* Data structure to resemble Trail burger entree 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

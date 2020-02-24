@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Baked Beans : Side
+* Data structure to resemble Baked Beans side
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

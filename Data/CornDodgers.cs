@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Corn Dodger : Side
+* Data structure to resemble Corn dodgers side
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

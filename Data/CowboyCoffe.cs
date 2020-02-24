@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* CowBoyCoffe : Drink
+* Data structure to resemble Cowboy Coffe drink. 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

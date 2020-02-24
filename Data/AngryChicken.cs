@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Angry chicken : Entree
+* Data structure to resemble Angry chicken entree 
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

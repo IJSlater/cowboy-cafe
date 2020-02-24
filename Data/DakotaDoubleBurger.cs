@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Dakota Double Burger : Entree
+* Data structure to resemble Dakota Double Burger entree 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

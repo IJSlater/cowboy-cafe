@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+*  Texas Tea : Drink
+* Data structure to resemble Texas Tea drink. 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

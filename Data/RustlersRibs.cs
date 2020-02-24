@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Rustlers Ribs: Entree
+* Data structure to resemble Rustlers Ribs entree 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

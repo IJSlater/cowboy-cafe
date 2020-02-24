@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* OrderControl
+* Class to handle the entree ordering part of the POS system
+*/
+using System;
 using CowboyCafe.Data;
 using System.Collections.Generic;
 using System.Text;

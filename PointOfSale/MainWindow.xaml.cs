@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* MainWindow
+*Class to handle the overall visual interface for the POS
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

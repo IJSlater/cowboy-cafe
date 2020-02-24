@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Pan De Campo : Side
+* Data structure to resemble Pan De campo side
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

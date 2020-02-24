@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* JerkedSoda : Drink
+* Data structure to resemble Jerked Soda drink. 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

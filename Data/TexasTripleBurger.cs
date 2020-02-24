@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Texas Triple Burger : Entree
+* Data structure to resemble Texas Triple Burger entree 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

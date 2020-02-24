@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Side
+*Parent class for Sides to inherit from 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

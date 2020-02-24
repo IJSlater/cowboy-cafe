@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* CowPoke Chillie : Entree
+* Data structure to resemble CowPoke Chillie entree 
+*/
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

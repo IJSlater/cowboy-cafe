@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Chillie Cheese Fries : Side
+* Data structure to resemble ChillieCheese Fries side
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
