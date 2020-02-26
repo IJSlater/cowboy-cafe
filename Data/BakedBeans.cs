@@ -53,7 +53,7 @@ namespace CowboyCafe.Data
                 }
                 else if (Size == Size.Large)
                 {
-                    return 610;
+                    return 410;
                 }
                 throw new NotImplementedException("unknown size");
             }
@@ -64,23 +64,9 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            String title="Baked Beans";
-            switch (Size)
-            {
-                case Size.Small:
-                    title += ", small";
-                    break;
-                case Size.Medium:
-                    title += ", medium";
-                    break;
-                case Size.Large:
-                    title += ", large";
-                    break;
-                default:
-                    throw new NotImplementedException("unknown size");
 
-            }
-
+            String title = $"{ Enum.GetName(typeof(Size), Size)}";
+            title += " Baked Beans";
             return title;
         }
     }

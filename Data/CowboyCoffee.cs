@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffe : Drink
+    public class CowboyCoffee : Drink
     {
         /// <summary>
         /// Determines the size of the drink
@@ -19,7 +19,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Determines wether or not there is ice in the drink
         /// </summary>
-        public override bool Ice { get; set; } = true;
+        public override bool Ice { get; set; } = false;
 
         /// <summary>
         /// determins if the coffe will have cream or not
@@ -90,26 +90,12 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            String title = "Cowboy Coffe";
+            String title = $"{ Enum.GetName(typeof(Size), Size)} ";
             if (Decaf)
             {
-                title += ", Decaf";
+                title += "Decaf ";
             }
-            switch (Size)
-            {
-                case Size.Small:
-                    title += ", small";
-                    break;
-                case Size.Medium:
-                    title += ", medium";
-                    break;
-                case Size.Large:
-                    title += ", large";
-                    break;
-                default:
-                    throw new NotImplementedException("unknown size");
-
-            }
+            title += "Cowboy Coffee";
 
             return title;
         }

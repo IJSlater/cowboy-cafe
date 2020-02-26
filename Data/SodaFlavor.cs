@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
     {
     CreamSoda,
     OrangeSoda,
-    Sasparilla,
+    Sarsparilla,
     BirchBeer,
     RootBeer
     }

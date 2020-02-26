@@ -64,8 +64,8 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            String title = "Pan de Campo";
-            title += $", { Enum.GetName(typeof(Size), Size)}";
+            String title = $"{ Enum.GetName(typeof(Size), Size)}";
+            title += " Pan de Campo";
             return title;
         }
 

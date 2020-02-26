@@ -47,7 +47,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            String title = "Rustlers Ribs";
+            String title = "Rustler's Ribs";
             return title;
         }
     }

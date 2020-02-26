@@ -92,7 +92,7 @@ namespace CowboyCafe.Data
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice)
+                if (!Ice)
                 {
                     instructions.Add("Hold Ice");
                 }
@@ -111,6 +111,15 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             String title = $"{ Enum.GetName(typeof(Size), Size)}";
+            title += " Texas";
+            if (Sweet)
+            {
+                title += " Sweet";
+            }
+            else
+            {
+                title += " Plain";
+            }
             title += " Tea";
             return title;
         }

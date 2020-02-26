@@ -97,7 +97,7 @@ namespace PointOfSale
 
         private void CowboyCoffeButton_Click(object sender, RoutedEventArgs e)
         {
-            CowboyCoffe cc = new CowboyCoffe();
+            CowboyCoffee cc = new CowboyCoffee();
             ticket.Items.Add(cc.ToString());
         }
 

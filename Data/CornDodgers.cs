@@ -64,22 +64,9 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            String title = "Corn Dodger";
-            switch (Size)
-            {
-                case Size.Small:
-                    title += ", small";
-                    break;
-                case Size.Medium:
-                    title += ", medium";
-                    break;
-                case Size.Large:
-                    title += ", large";
-                    break;
-                default:
-                    throw new NotImplementedException("unknown size");
-
-            }
+            String title = $"{ Enum.GetName(typeof(Size), Size)}";
+            title += " Corn Dodgers";
+            return title;
 
             return title;
         }

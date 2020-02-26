@@ -61,7 +61,7 @@ namespace CowboyCafe.Data
                 }
                 if (Lemon)
                 {
-                    instructions.Add("Lemon");
+                    instructions.Add("Add Lemon");
                 }
                 return instructions;
 

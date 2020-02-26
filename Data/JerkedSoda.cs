@@ -33,7 +33,7 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Small):
-                        return 2.10;
+                        return 1.59;
                     case (Size.Medium):
                         return 2.10;
                     case (Size.Large):
@@ -60,30 +60,53 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+                if (!Ice)
+                {
+                    instructions.Add("Hold Ice");
+                }
+                return instructions;
+
+            }
+
+        }
+
         /// <summary>
         /// To string method tickets
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            String title = "Jerked Soda";
-            title += $", { Enum.GetName(typeof(SodaFlavor), Flavor)}";
-
-            switch (Size)
+            
+            String title = $"{ Enum.GetName(typeof(Size), Size)} ";
+            string flavorname = "";
+            switch (Flavor)
             {
-                case Size.Small:
-                    title += ", small";
+                case SodaFlavor.CreamSoda:
+                    flavorname = "Cream Soda";
                     break;
-                case Size.Medium:
-                    title += ", medium";
+                case SodaFlavor.BirchBeer:
+                    flavorname = "Birch Beer";
                     break;
-                case Size.Large:
-                    title += ", large";
+                case SodaFlavor.OrangeSoda:
+                    flavorname = "Orange Soda";
+                    break;
+                case SodaFlavor.RootBeer:
+                    flavorname = "Root Beer";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    flavorname = "Sarsparilla";
                     break;
                 default:
-                    throw new NotImplementedException("unknown size");
-
+                    throw new InvalidOperationException("Unkown flavor");
             }
+            title += $"{flavorname}";
+            title += " Jerked Soda";
+
 
             return title;
         }
