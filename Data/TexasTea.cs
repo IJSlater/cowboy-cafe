@@ -110,8 +110,8 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            String title = "Texas Tea";
-            title += $", { Enum.GetName(typeof(Size), Size)}";
+            String title = $"{ Enum.GetName(typeof(Size), Size)}";
+            title += " Tea";
             return title;
         }
     }
