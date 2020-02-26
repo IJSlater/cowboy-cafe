@@ -9,11 +9,11 @@ namespace CowboyCafe.DataTests
     public class OrderTests
     {
         public class MockOrderItem : IOrderItem
-        { 
+        {
             public double Price { get; set; }
             public double Calories { get; set; }
             public List<String> SpecialIstructions { get; }
-          
+
 
 
 
@@ -60,15 +60,15 @@ namespace CowboyCafe.DataTests
                 );
 
         }
-        
+
         [Theory]
-        [InlineData(new double[] { 1,2,3 })]
-        [InlineData(new double[] { 0,0,0,})]
+        [InlineData(new double[] { 1, 2, 3 })]
+        [InlineData(new double[] { 0, 0, 0, })]
         [InlineData(new double[] { 1.99, 4.99, 6.99 })]
-        [InlineData(new double[] {})]
+        [InlineData(new double[] { })]
         [InlineData(new double[] { -10 })]
         [InlineData(new double[] { .78098954 })]
-        [InlineData(new double[] { double.NaN,'A' })]
+        [InlineData(new double[] { double.NaN, 'A' })]
 
         public void ShouldBeTheSumOfTheItemPrices(double[] prices)
         {
@@ -83,11 +83,47 @@ namespace CowboyCafe.DataTests
                     Price = price
                 }
                 );
-            
+
             }
             Assert.Equal(total, order.Subtotal);
 
 
         }
+
+        [Theory]
+        [InlineData("Price")]
+        [InlineData("Items")]
+        public void AddingAnItemShouldTriggerPropertyChanged(string Propertyname)
+        {
+            var order = new Order();
+            var item = new MockOrderItem();
+            Assert.PropertyChanged(order, Propertyname, () =>
+            {
+                order.Add(item);
+
+            }
+            );
+
+        }
+
+
+        [Theory]
+        [InlineData("Price")]
+        [InlineData("Items")]
+        public void RemovingAnItemShouldTriggerPropertyChanged(string Propertyname)
+        {
+            var order = new Order();
+            var item = new MockOrderItem();
+            order.Add(item);
+            Assert.PropertyChanged(order, Propertyname, () =>
+            {
+                order.Remove(item);
+
+            }
+            );
+
+        }
+
+
     }
 }

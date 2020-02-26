@@ -1,12 +1,15 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text;
 using CowboyCafe.Data;
 
 namespace CowboyCafe.Data
 {
-    public class Order
+    public class Order :INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public double Subtotal { get; set; }
 
