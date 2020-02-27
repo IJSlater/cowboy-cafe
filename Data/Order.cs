@@ -18,16 +18,17 @@ namespace CowboyCafe.Data
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
-        public IEnumerable<IOrderItem> Items {get => items;}
+        public IEnumerable<IOrderItem> Items {get => items.ToArray();}
 
         public void Add(IOrderItem i)
         {
             items.Add(i);
             this.Subtotal += i.Price;
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Items"));
 
-        
+
+
         }
         public void Remove(IOrderItem i)
         {

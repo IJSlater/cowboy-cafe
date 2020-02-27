@@ -30,7 +30,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order currentOrder = new Order();
-            currentOrder.PropertyChanged += ordersummarycontrol.OnItemChanged;
             DataContext = currentOrder;
         }
 

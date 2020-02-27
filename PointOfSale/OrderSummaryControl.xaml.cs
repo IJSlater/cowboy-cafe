@@ -27,16 +27,12 @@ namespace PointOfSale
         }
 
 
-        public void OnItemChanged(object sender, PropertyChangedEventArgs e)
+        private void ScrollBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (sender is Order order)
-            {
-                
-                ticket.Items.Add("Angry Chicken");
-            }
+
         }
 
-        private void ScrollBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

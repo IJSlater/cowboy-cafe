@@ -9,7 +9,20 @@
     
         <Grid>
             <Border BorderThickness="1" BorderBrush="Black" Margin="10,38,10,60">
-            <ListBox Name="ticket"/>
+            <ListBox  HorizontalContentAlignment="Stretch"  ItemsSource="{Binding Path=Items}" SelectionChanged="ListBox_SelectionChanged" Margin="19,26,23,25">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding}"></TextBlock>
+                            <TextBlock HorizontalAlignment="Right" Text="{Binding Path=Price}"
+                        </Grid>
+                        </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Border>
 
         <TextBlock Name="SubtotalTextBox"  HorizontalAlignment="Right" Margin="0,515,10,0" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="84"/>
