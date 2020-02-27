@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <local:OrderControl/>
+        Title="MainWindow" Height="570" Width="1000">
+    <Grid RenderTransformOrigin="0.568,0.499">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <local:OrderControl Height="420" Grid.Column="0" Margin="0,84,0,0" />
+        <local:OrderSummaryControl Grid.Column="1"/>
     </Grid>
 </Window>
