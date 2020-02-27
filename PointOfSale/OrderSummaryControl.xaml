@@ -6,38 +6,43 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="570" d:DesignWidth="300">
-    
-        <Grid>
-            <Border BorderThickness="1" BorderBrush="Black" Margin="10,38,10,60">
-            <ListBox  HorizontalContentAlignment="Stretch"  ItemsSource="{Binding Path=Items}" SelectionChanged="ListBox_SelectionChanged" Margin="19,26,23,25">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property = "FontSize" Value = "20" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+
+
+        <Border BorderThickness="1" BorderBrush="Black" Margin="10,38,10,60">
+            <ListBox  HorizontalContentAlignment="Stretch"  ItemsSource="{Binding Path=Items}" SelectionChanged="ListBox_SelectionChanged" Margin="0,0,-1,-1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}"></TextBlock>
-                            <TextBlock HorizontalAlignment="Right" Text="{Binding Path=Price}"
+                            <TextBlock  Text="{Binding}"></TextBlock>
+                            <TextBlock  Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Price}"/>
+                            <ListBox  BorderThickness="0" Grid.Row="1" HorizontalAlignment="Center" ItemsSource="{Binding  Path=SpecialInstructions}"/>
                         </Grid>
-                        </DataTemplate>
+                    </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Border>
-
-        <TextBlock Name="SubtotalTextBox"  HorizontalAlignment="Right" Margin="0,515,10,0" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="84"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,515,0,0" FontSize="20"  TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="90">Subtotal</TextBlock>
-
-
-
-
-
-            <TextBlock HorizontalAlignment="Left" Margin="10,-2,0,0" Text="Ticket" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
-            <ScrollBar HorizontalAlignment="Left" Margin="263,63,0,0" VerticalAlignment="Top" Height="427"/>
+        <TextBlock Name="SubtotalTextBox"  HorizontalAlignment="Right" Margin="0,533,10,0" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="84"/>
+        <TextBlock HorizontalAlignment="Left" Margin="7,534,0,0" FontSize="20"  TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="90">Subtotal</TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,-2,0,0" Text="Ticket" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
 
 
 
 
-        </Grid>
-    
+    </Grid>
+
 </UserControl>

@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
 
 
 
-        public double Subtotal { get; set; } = 10.0;
+        public double Subtotal { get; set; } = 0.00;
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
@@ -26,9 +26,6 @@ namespace CowboyCafe.Data
             this.Subtotal += i.Price;
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Items"));
-
-
-
         }
         public void Remove(IOrderItem i)
         {

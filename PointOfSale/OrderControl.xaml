@@ -15,7 +15,6 @@
             <Setter Property = "FontSize" Value = "23" />
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="5"/>
             <Setter Property = "FontSize" Value = "25" />
         </Style>
     </UserControl.Resources>
@@ -26,7 +25,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <TextBlock TextAlignment="Center">Enrees</TextBlock>
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
             <Button Name="CowpokeChiliButton" Click="CowpokeChiliButton_Click">CowPoke Chili</Button>
             <Button Name="DakotaDoubleButton" Click="DakotaDoubleButton_Click">Dakto Double</Button>
@@ -38,7 +37,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">sides</TextBlock>
+            <TextBlock TextAlignment="Center">Sides</TextBlock>
             <Button Name="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">ChillieCheese Fries</Button>
             <Button Name="CornDodgerButton" Click="CornDodgerButton_Click">Corn Dodgers</Button>
             <Button Name="PandeCampoButton" Click="PandeCampoButton_Click">Pan de Campo</Button>
