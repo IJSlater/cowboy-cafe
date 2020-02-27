@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -32,7 +33,11 @@ namespace PointOfSale
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
             AngryChicken ac = new AngryChicken();
-            ticket.Items.Add(ac.ToString());
+            if (DataContext is Order order)
+            {
+                order.Add(ac);
+            
+            }
         }
 
         private void CowpokeChiliButton_Click(object sender, RoutedEventArgs e)

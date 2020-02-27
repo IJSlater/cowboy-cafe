@@ -6,9 +6,9 @@ namespace CowboyCafe.Data
 {
     public interface IOrderItem
     {
-        double Price { get; }
-        double Calories { get; }
-        List<String> SpecialIstructions { get; }
+         double Price { get; }
+         uint Calories { get; }
+         List<String> SpecialInstructions { get; }
 
 
     }

@@ -6,29 +6,25 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="570" d:DesignWidth="300">
-    <Grid>
+    
+        <Grid>
+            <Border BorderThickness="1" BorderBrush="Black" Margin="10,38,10,60">
+            <ListBox Name="ticket"/>
+        </Border>
 
-        <Separator HorizontalAlignment="Center" Margin="0,500,0,0" VerticalAlignment="Top" Height="1" RenderTransformOrigin="0.5,0.5" Width="300">
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
-
-        <TextBlock Name="SubtotalTextBox" HorizontalAlignment="Right" Margin="0,515,10,0" FontSize="20"  TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="84">100.60</TextBlock>
+        <TextBlock Name="SubtotalTextBox"  HorizontalAlignment="Right" Margin="0,515,10,0" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="84"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,515,0,0" FontSize="20"  TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="90">Subtotal</TextBlock>
-        <TextBlock Name="TicketTextBox" HorizontalAlignment="Center" Margin="0,25,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="463" Width="280">
-
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,-2,0,0" Text="Ticket" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
-        <ScrollBar HorizontalAlignment="Left" Margin="273,38,0,0" VerticalAlignment="Top" Height="439"/>
 
 
 
 
-    </Grid>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,-2,0,0" Text="Ticket" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+            <ScrollBar HorizontalAlignment="Left" Margin="263,63,0,0" VerticalAlignment="Top" Height="427"/>
+
+
+
+
+        </Grid>
+    
 </UserControl>
