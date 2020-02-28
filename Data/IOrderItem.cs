@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* IOrderItem
+* Parent Class for all Items that will go on an item 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* Order
+* Class to handle what is showon the ticket
+*/
+using System;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text;

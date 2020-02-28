@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* OrderSummaryControl
+* Class to handle the showing of the ticket to the cashier 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;

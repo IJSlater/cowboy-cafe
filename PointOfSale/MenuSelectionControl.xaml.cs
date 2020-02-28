@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* MenuSelectionControl
+* Parent Class for all Items that will go on an item 
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
