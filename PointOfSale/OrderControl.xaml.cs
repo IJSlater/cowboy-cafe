@@ -35,11 +35,16 @@ namespace PointOfSale
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
             AngryChicken ac = new AngryChicken();
+            
             if (DataContext is Order order)
             {
+                ac.PropertyChanged += order.OnInstructionAdded;
                 order.Add(ac);
-            
-            }
+
+            } 
+            MainWindow.Child = new EntreeCustomizationControl(ac);
+            //DataContext = order;
+            //order.Add(ac);
         }
 
         private void CowpokeChiliButton_Click(object sender, RoutedEventArgs e)

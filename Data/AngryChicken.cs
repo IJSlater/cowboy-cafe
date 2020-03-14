@@ -6,15 +6,19 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken : Entree
+    public class AngryChicken : Entree// INotifyPropertyChanged
+
     {
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        
 
-      
+
         /// <summary>
         /// The price of the Sandwich
         /// </summary>
@@ -44,17 +48,26 @@ namespace CowboyCafe.Data
         public bool Bread
         {
             get { return bread; }
-            set { bread = value; }
+            set {
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                    bread = value; 
+                }
         }
 
         private bool pickle =true;
+
+        
+
         /// <summary>
         /// Determins if the sandwich has pickles.
         /// </summary>
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set {
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                    pickle = value; 
+                }
         }
         
         public override List<string> SpecialInstructions
@@ -65,7 +78,6 @@ namespace CowboyCafe.Data
 
                 if (!bread) instructions.Add("hold bread");
                 if (!pickle) instructions.Add("hold pickle");
-
                 return instructions;
             }
         }

@@ -5,13 +5,15 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public interface IOrderItem
+    public interface IOrderItem :INotifyPropertyChanged
     {
-         double Price { get; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        double Price { get; }
          uint Calories { get; }
          List<String> SpecialInstructions { get; }
 

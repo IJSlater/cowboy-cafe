@@ -5,18 +5,22 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Entree : IOrderItem
-    {
-        
+    public abstract class Entree:IOrderItem//, INotifyPropertyChanged
 
-        /// <summary>
-        /// skeleton parameter for price variable
-        /// </summary>
-        public abstract double Price { get; }
+    {
+
+       public event PropertyChangedEventHandler PropertyChanged;
+
+
+    /// <summary>
+    /// skeleton parameter for price variable
+    /// </summary>
+    public abstract double Price { get; }
 
         /// <summary>
         /// skeleton parameter for the calories variable

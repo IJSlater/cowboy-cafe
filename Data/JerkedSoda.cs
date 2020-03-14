@@ -11,6 +11,7 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda: Drink
     {
+
         /// <summary>
         /// Determines the size of the drink
         /// </summary>

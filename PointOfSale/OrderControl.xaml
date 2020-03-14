@@ -17,45 +17,47 @@
         <Style TargetType="TextBlock">
             <Setter Property = "FontSize" Value = "25" />
         </Style>
+    
     </UserControl.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel>
-            <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
-            <Button Name="CowpokeChiliButton" Click="CowpokeChiliButton_Click">CowPoke Chili</Button>
-            <Button Name="DakotaDoubleButton" Click="DakotaDoubleButton_Click">Dakto Double</Button>
-            <Button Name="PecosPulledPorkButton" Click="PecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
-            <Button Name="RustlersRibsButton" Click="RustlersRibsButton_Click">Rustlers Ribs</Button>
-            <Button Name="TexasTripleButton" Click="TexasTripleButton_Click">Texas Triple</Button>
-            <Button Name="TrailBurgerButton" Click="TrailBurgerButton_Click">Trail Burger</Button>
-            
-        </StackPanel>
+    <Border Name="MainWindow" BorderThickness="0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Sides</TextBlock>
-            <Button Name="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">ChillieCheese Fries</Button>
-            <Button Name="CornDodgerButton" Click="CornDodgerButton_Click">Corn Dodgers</Button>
-            <Button Name="PandeCampoButton" Click="PandeCampoButton_Click">Pan de Campo</Button>
-            
+            <StackPanel>
+                <TextBlock TextAlignment="Center">Entrees</TextBlock>
+                <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
+                <Button Name="CowpokeChiliButton" Click="CowpokeChiliButton_Click">CowPoke Chili</Button>
+                <Button Name="DakotaDoubleButton" Click="DakotaDoubleButton_Click">Dakto Double</Button>
+                <Button Name="PecosPulledPorkButton" Click="PecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
+                <Button Name="RustlersRibsButton" Click="RustlersRibsButton_Click">Rustlers Ribs</Button>
+                <Button Name="TexasTripleButton" Click="TexasTripleButton_Click">Texas Triple</Button>
+                <Button Name="TrailBurgerButton" Click="TrailBurgerButton_Click">Trail Burger</Button>
 
-        </StackPanel>
+            </StackPanel>
 
-        <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center">Drinks</TextBlock>
-            <Button Name="JerkedSodeButton" Click="JerkedSodeButton_Click">Jerked Soda</Button>
-            <Button Name="CowboyCoffeButton" Click="CowboyCoffeButton_Click">Cowboy Coffe</Button>
-            <Button Name="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
-            <Button Name="WaterButton" Click="WaterButton_Click">Water</Button>
-        </StackPanel>
-        <ListBox Width="0" Name="ticket"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock TextAlignment="Center">Sides</TextBlock>
+                <Button Name="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">ChillieCheese Fries</Button>
+                <Button Name="CornDodgerButton" Click="CornDodgerButton_Click">Corn Dodgers</Button>
+                <Button Name="PandeCampoButton" Click="PandeCampoButton_Click">Pan de Campo</Button>
 
 
-    </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock TextAlignment="Center">Drinks</TextBlock>
+                <Button Name="JerkedSodeButton" Click="JerkedSodeButton_Click">Jerked Soda</Button>
+                <Button Name="CowboyCoffeButton" Click="CowboyCoffeButton_Click">Cowboy Coffe</Button>
+                <Button Name="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
+                <Button Name="WaterButton" Click="WaterButton_Click">Water</Button>
+            </StackPanel>
+            <ListBox Width="0" Name="ticket"/>
 
 
+        </Grid>
+    </Border>
 </UserControl>

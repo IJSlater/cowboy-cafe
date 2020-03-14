@@ -5,6 +5,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -14,7 +15,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Drink : IOrderItem
     {
-
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Holds wehter or  not a drink has ice
         /// </summary>
