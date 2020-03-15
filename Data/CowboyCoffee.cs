@@ -5,6 +5,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -12,24 +13,66 @@ namespace CowboyCafe.Data
     public class CowboyCoffee : Drink
     {
         /// <summary>
+        /// event to trigger when special instructions are changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
         /// Determines the size of the drink
         /// </summary>
-        public override Size Size { get; set; }
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
+                size = value;
+            }
+        }
 
         /// <summary>
         /// Determines wether or not there is ice in the drink
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        private bool ice = false;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                ice = value;
+            }
+        }
+
 
         /// <summary>
         /// determins if the coffe will have cream or not
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        private bool roomforcream=false;
+        public bool RoomForCream
+        {
+            get { return roomforcream; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                roomforcream = value;
+            }
+        }
+
         /// <summary>
         /// determins if the coffe is decaf or not
         /// </summary>
-        public bool Decaf { get; set; } = false;
-
+        private bool decaf = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                decaf = value;
+            }
+        }
         /// <summary>
         /// Determins the price of the drink based on the size of the drink
         /// </summary>

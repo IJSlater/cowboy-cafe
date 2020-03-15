@@ -4,6 +4,7 @@
 * Data structure to resemble CowPoke Chillie entree 
 */
 using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -13,6 +14,11 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree
     {
+        /// <summary>
+        /// event to trigger when special instructions are changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese
@@ -20,7 +26,9 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                cheese = value; }
         }
 
         private bool sourCream = true;
@@ -30,7 +38,9 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("SourCream"));
+                sourCream = value; }
         }
 
         private bool greenOnions = true;
@@ -40,7 +50,9 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("GreenOnions"));
+                greenOnions = value; }
         }
 
         private bool tortillaStrips = true;
@@ -50,7 +62,9 @@ namespace CowboyCafe.Data
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("TortillaStrips"));
+                tortillaStrips = value; }
         }
 
         /// <summary>

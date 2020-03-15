@@ -22,7 +22,7 @@
 
 
     </UserControl.Resources>
-    <Border Name="border">
+    
 
         <Grid>
 
@@ -30,22 +30,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <!--<Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>-->
+          
             <ListBox Name="LeftBox" Grid.Column="0" />
             <ListBox Name="RightBox" Grid.Column="1" />
-            <!--<CheckBox  IsChecked="{Binding Path=Bread, Mode=TwoWay}"  HorizontalAlignment="Right" Unchecked="CheckBox_Checked" Checked="CheckBox_Checked" Content="Bread" Grid.Column="0" Grid.Row="0" />-->
             <Button VerticalAlignment="Bottom" Content="Select Menu Items" HorizontalAlignment="Center" Grid.ColumnSpan="2"  Click="Button_Click" Height="50" Width="272" Grid.RowSpan="2"/>
-            <!--<TextBlock Name="Box" HorizontalAlignment="Left" Margin="309,0,0,0" Grid.Row="3" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="187" Width="166"/>-->
 
         </Grid>
-    </Border>
 </UserControl>

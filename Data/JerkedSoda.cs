@@ -5,24 +5,58 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     public class JerkedSoda: Drink
     {
+        /// <summary>
+        /// event to trigger when special instructions are changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Determines the size of the drink
         /// </summary>
-        public override Size Size { get; set; }
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
+                size = value;
+            }
+        }
 
         /// <summary>
         /// Determines wether or not there is ice in the drink
         /// </summary>
-        public override bool Ice { get; set; } = true;
-
-        public SodaFlavor Flavor { get; set; }
+        private bool ice = true;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                ice = value;
+            }
+        }
+        /// <summary>
+        /// Propety to manage the sodas flavor
+        /// </summary>
+        private SodaFlavor flavor = SodaFlavor.BirchBeer;
+        public SodaFlavor Flavor
+        {
+            get { return flavor; }
+            set
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                flavor = value;
+            }
+        }
 
         /// <summary>
         /// Determins the price of the drink based on the size of the drink

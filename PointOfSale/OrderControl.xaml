@@ -19,14 +19,14 @@
         </Style>
     
     </UserControl.Resources>
-    <Border Name="MainWindow" BorderThickness="0">
+    <Border Name="MainWindow" BorderThickness="0" >
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
+            
             <StackPanel>
                 <TextBlock TextAlignment="Center">Entrees</TextBlock>
                 <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
@@ -42,6 +42,7 @@
             <StackPanel Grid.Column="1">
                 <TextBlock TextAlignment="Center">Sides</TextBlock>
                 <Button Name="ChiliCheeseFriesButton" Click="ChiliCheeseFriesButton_Click">ChillieCheese Fries</Button>
+                <Button Name="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
                 <Button Name="CornDodgerButton" Click="CornDodgerButton_Click">Corn Dodgers</Button>
                 <Button Name="PandeCampoButton" Click="PandeCampoButton_Click">Pan de Campo</Button>
 
@@ -59,5 +60,6 @@
 
 
         </Grid>
+
     </Border>
 </UserControl>

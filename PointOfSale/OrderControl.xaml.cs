@@ -27,9 +27,7 @@ namespace PointOfSale
     {
         public OrderControl()
         {
-            InitializeComponent();
-            
-            
+            InitializeComponent();  
         }
 
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
@@ -38,13 +36,12 @@ namespace PointOfSale
             
             if (DataContext is Order order)
             {
-                ac.PropertyChanged += order.OnInstructionAdded;
                 order.Add(ac);
-
+                ac.PropertyChanged += order.OnInstructionAdded;               
+                MainWindow.Child = new EntreeCustomizationControl(ac);
             } 
-            MainWindow.Child = new EntreeCustomizationControl(ac);
-            //DataContext = order;
-            //order.Add(ac);
+           
+
         }
 
         private void CowpokeChiliButton_Click(object sender, RoutedEventArgs e)
@@ -53,6 +50,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(cp);
+                cp.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(cp);
 
             }
 
@@ -64,6 +63,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(ddb);
+                ddb.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(ddb);
 
             }
         }
@@ -74,6 +75,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(ppp);
+                ppp.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(ppp);
 
             }
         }
@@ -84,6 +87,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(rr);
+               
 
             }
         }
@@ -94,6 +98,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(ttb);
+                ttb.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(ttb);
 
             }
         }
@@ -104,6 +110,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(tb);
+                tb.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(tb);
 
             }
         }
@@ -114,6 +122,19 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(ccf);
+                ccf.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(ccf);
+
+            }
+        }
+        private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
+        {
+            BakedBeans bb = new BakedBeans();
+            if (DataContext is Order order)
+            {
+                order.Add(bb);
+                bb.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(bb);
 
             }
         }
@@ -124,6 +145,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(cd);
+                cd.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(cd);
 
             }
         }
@@ -134,6 +157,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(pdc);
+                pdc.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(pdc);
 
             }
         }
@@ -144,6 +169,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(js);
+                js.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(js);
 
             }
         }
@@ -154,6 +181,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(cc);
+                cc.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(cc);
 
             }
         }
@@ -164,6 +193,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(tt);
+                tt.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(tt);
 
             }
         }
@@ -174,8 +205,17 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(w);
+                w.PropertyChanged += order.OnInstructionAdded;
+                MainWindow.Child = new EntreeCustomizationControl(w);
 
             }
         }
+
+        public void SwapScreen()
+        {
+            MainWindow.Child = new OrderControl();
+        }
+
+
     }
 }

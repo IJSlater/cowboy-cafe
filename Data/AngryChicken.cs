@@ -15,6 +15,9 @@ namespace CowboyCafe.Data
 
     {
 
+        /// <summary>
+        /// event to trigger when special instructions are changed
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         
 

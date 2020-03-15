@@ -5,12 +5,17 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     public class TrailBurger:Entree
     {
+        /// <summary>
+        /// event to trigger when special instructions are changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price of the burger
@@ -41,7 +46,9 @@ namespace CowboyCafe.Data
         public bool Bun
         {
             get { return bun; }
-            set { bun = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Bun"));
+                bun = value; }
         }
 
         private bool ketchup = true;
@@ -51,7 +58,9 @@ namespace CowboyCafe.Data
         public bool Ketchup
         {
             get { return ketchup; }
-            set { ketchup = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                ketchup = value; }
         }
 
         private bool mustard = true;
@@ -61,7 +70,9 @@ namespace CowboyCafe.Data
         public bool Mustard
         {
             get { return mustard; }
-            set { mustard = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+                mustard = value; }
         }
 
         private bool pickle = true;
@@ -71,7 +82,9 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                pickle = value; }
         }
 
         private bool cheese = true;
@@ -81,7 +94,9 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                cheese = value; }
         }
 
         public override List<string> SpecialInstructions
