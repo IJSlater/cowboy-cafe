@@ -96,7 +96,28 @@ namespace PointOfSale
             }
             else if (item is Side)
             {
-               // if(item is )
+                if (item is ChiliCheeseFries ccf)
+                {
+                    DataContext = ccf;
+                    SizeControll();
+
+                }
+                else if (item is CornDodgers cd)
+                {
+                    DataContext = cd;
+                    SizeControll();
+                }
+                else if (item is BakedBeans bb)
+                {
+                    DataContext = bb;
+                    SizeControll();
+                }
+                else if (item is PanDeCampo pdc)
+                {
+                    DataContext = pdc;
+                    SizeControll();
+                }
+
             }
             else 
             {
@@ -106,6 +127,7 @@ namespace PointOfSale
 
 
         }
+        //*****************************************************************************************************************
         private void BasicsControll()
         {
             CheckBox Bread = new CheckBox();
@@ -337,8 +359,10 @@ namespace PointOfSale
             LeftBox.Items.Add(GreenOnions);
             RightBox.Items.Add(TortillaStrips);
         }
-        private void IceControll()
+        //*****************************************************************************************************************
+        private void DrinkBasics()
         {
+            SizeControll();
             CheckBox Ice = new CheckBox();
             Ice.Content = "Ice";
             Ice.HorizontalAlignment = HorizontalAlignment.Right;
@@ -388,12 +412,12 @@ namespace PointOfSale
         private void WaterControll()
         {
             LemonControll();
-            IceControll();
+            DrinkBasics();
         }
 
         private void CowboyCoffeeControll()
         {
-            IceControll();
+            DrinkBasics();
 
             CheckBox Decaf = new CheckBox();
             Decaf.Content = "Decaf";
@@ -426,7 +450,7 @@ namespace PointOfSale
 
         private void TexasTeaControll()
         {
-            IceControll();
+            DrinkBasics();
             LemonControll();
             SweetControll();
 
@@ -434,9 +458,36 @@ namespace PointOfSale
 
         private void JerkedSodaControll()
         {
-            IceControll();
+            
+            ComboBox Flavor = new ComboBox();
+            BindingOperations.SetBinding(Flavor, ComboBox.SelectedValueProperty,new Binding()
+            {
+                Source = DataContext,
+                Path = new PropertyPath("Flavor"),
+                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                Mode = BindingMode.TwoWay
+            }
+            );
+            BindingOperations.SetBinding(Flavor, ComboBox.ItemsSourceProperty, new Binding()
+            {
+                Source = DataContext,
+                Path = new PropertyPath("FlavorValue"),
+                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                Mode = BindingMode.OneWay
+            }
+            );
+            RightBox.Items.Add(Flavor);
+            DrinkBasics();
 
-        
+
+
+        }
+
+        //*****************************************************************************************************************
+
+        private void SizeControll()
+        {
+            LeftBox.Items.Add(new ComboBox());
         }
 
 

@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -20,6 +21,11 @@ namespace CowboyCafe.Data
         /// Gets the size of the entree
         /// </summary>
         public abstract Size Size { get; set; }
+
+        /// <summary>
+        /// Gives the values of sizes for databinding
+        /// </summary>
+        public virtual IEnumerable<Size> SizeValues => Enum.GetValues(typeof(Size)).Cast<Size>();
 
         /// <summary>
         /// Gets the price of the side

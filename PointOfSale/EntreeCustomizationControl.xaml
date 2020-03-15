@@ -17,23 +17,28 @@
                     <ScaleTransform  ScaleX="2" ScaleY="2"/>
                 </Setter.Value>
             </Setter>
-
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="SelectedItem" Value="{Binding Path=Size}"/>
+            <Setter Property="ItemsSource" Value="{Binding Path=SizeValues}"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="334"/>
         </Style>
 
 
     </UserControl.Resources>
-    
 
-        <Grid>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-          
-            <ListBox Name="LeftBox" Grid.Column="0" />
-            <ListBox Name="RightBox" Grid.Column="1" />
-            <Button VerticalAlignment="Bottom" Content="Select Menu Items" HorizontalAlignment="Center" Grid.ColumnSpan="2"  Click="Button_Click" Height="50" Width="272" Grid.RowSpan="2"/>
+    <Grid>
 
-        </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="LeftBox" Grid.Column="0" />
+        <ListBox Name="RightBox" Grid.Column="1" />
+        <Button VerticalAlignment="Bottom" Content="Select Menu Items" HorizontalAlignment="Center" Grid.ColumnSpan="2"  Click="Button_Click" Height="50" Width="272" Grid.RowSpan="2"/>
+
+    </Grid>
 </UserControl>

@@ -37,12 +37,23 @@ namespace CowboyCafe.Data
 
         public void OnInstructionAdded(object sender, PropertyChangedEventArgs e)
         {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if (sender is IOrderItem i)
+            {
+                //if (items.Find(i).Price != i.Price)
+                //{ 
+                
+                //}
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Items"));
+
+
+            }
         }
 
         public void Remove(IOrderItem i)
         {
+            items.Remove(i);
+            this.Subtotal -= i.Price;
 
         }
 

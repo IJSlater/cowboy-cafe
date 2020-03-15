@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -16,6 +17,11 @@ namespace CowboyCafe.Data
         /// event to trigger when special instructions are changed
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Gives the values of sizes for databinding
+        /// </summary>
+        public virtual IEnumerable<SodaFlavor> FlavorValue => Enum.GetValues(typeof(SodaFlavor)).Cast<SodaFlavor>();
 
         /// <summary>
         /// Determines the size of the drink
