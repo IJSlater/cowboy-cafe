@@ -39,6 +39,7 @@
         <TextBlock Name="SubtotalTextBox"  HorizontalAlignment="Right" Margin="0,533,10,0" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="84"/>
         <TextBlock HorizontalAlignment="Left" Margin="7,534,0,0" FontSize="20"  TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="90">Subtotal</TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,-2,0,0" Text="Ticket" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBlock x:Name="OrderNumber"  HorizontalAlignment="Left" Margin="206,2,0,0" FontSize="20" Text="{Binding OrderNumber}" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="84"/>
 
 
 

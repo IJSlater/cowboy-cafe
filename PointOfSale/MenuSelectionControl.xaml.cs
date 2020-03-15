@@ -36,13 +36,14 @@ namespace PointOfSale
 
         private void CancelOrderButon_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            ((MainWindow)((Grid)Parent).Parent).DataContext = new Order();
+           // DataContext = new Order();
             
         }
 
         private void CompleteOrderButon_Click(object sender, RoutedEventArgs e)
         {
-
+            DataContext = new Order();
         }
     }
 }

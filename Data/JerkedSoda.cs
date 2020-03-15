@@ -18,6 +18,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+
         /// <summary>
         /// Gives the values of sizes for databinding
         /// </summary>
@@ -32,8 +33,8 @@ namespace CowboyCafe.Data
             get { return size; }
             set
             {
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
                 size = value;
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }
 
@@ -60,6 +61,7 @@ namespace CowboyCafe.Data
             set
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                
                 flavor = value;
             }
         }

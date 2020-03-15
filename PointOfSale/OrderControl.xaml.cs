@@ -38,7 +38,7 @@ namespace PointOfSale
             {
                 order.Add(ac);
                 ac.PropertyChanged += order.OnInstructionAdded;               
-                MainWindow.Child = new EntreeCustomizationControl(ac);
+                MainWindow.Child = new CustomizationControl(ac);
             } 
            
 
@@ -51,7 +51,7 @@ namespace PointOfSale
             {
                 order.Add(cp);
                 cp.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(cp);
+                MainWindow.Child = new CustomizationControl(cp);
 
             }
 
@@ -64,7 +64,7 @@ namespace PointOfSale
             {
                 order.Add(ddb);
                 ddb.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(ddb);
+                MainWindow.Child = new CustomizationControl(ddb);
 
             }
         }
@@ -76,19 +76,18 @@ namespace PointOfSale
             {
                 order.Add(ppp);
                 ppp.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(ppp);
+                MainWindow.Child = new CustomizationControl(ppp);
 
             }
         }
 
         private void RustlersRibsButton_Click(object sender, RoutedEventArgs e)
         {
+
             RustlersRibs rr = new RustlersRibs();
             if (DataContext is Order order)
             {
-                order.Add(rr);
-               
-
+                    order.Add(new RustlersRibs());
             }
         }
 
@@ -99,7 +98,7 @@ namespace PointOfSale
             {
                 order.Add(ttb);
                 ttb.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(ttb);
+                MainWindow.Child = new CustomizationControl(ttb);
 
             }
         }
@@ -111,7 +110,7 @@ namespace PointOfSale
             {
                 order.Add(tb);
                 tb.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(tb);
+                MainWindow.Child = new CustomizationControl(tb);
 
             }
         }
@@ -123,7 +122,7 @@ namespace PointOfSale
             {
                 order.Add(ccf);
                 ccf.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(ccf);
+                MainWindow.Child = new CustomizationControl(ccf);
 
             }
         }
@@ -134,7 +133,7 @@ namespace PointOfSale
             {
                 order.Add(bb);
                 bb.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(bb);
+                MainWindow.Child = new CustomizationControl(bb);
 
             }
         }
@@ -146,7 +145,7 @@ namespace PointOfSale
             {
                 order.Add(cd);
                 cd.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(cd);
+                MainWindow.Child = new CustomizationControl(cd);
 
             }
         }
@@ -158,7 +157,7 @@ namespace PointOfSale
             {
                 order.Add(pdc);
                 pdc.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(pdc);
+                MainWindow.Child = new CustomizationControl(pdc);
 
             }
         }
@@ -170,7 +169,7 @@ namespace PointOfSale
             {
                 order.Add(js);
                 js.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(js);
+                MainWindow.Child = new CustomizationControl(js);
 
             }
         }
@@ -182,7 +181,7 @@ namespace PointOfSale
             {
                 order.Add(cc);
                 cc.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(cc);
+                MainWindow.Child = new CustomizationControl(cc);
 
             }
         }
@@ -194,7 +193,7 @@ namespace PointOfSale
             {
                 order.Add(tt);
                 tt.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(tt);
+                MainWindow.Child = new CustomizationControl(tt);
 
             }
         }
@@ -206,7 +205,7 @@ namespace PointOfSale
             {
                 order.Add(w);
                 w.PropertyChanged += order.OnInstructionAdded;
-                MainWindow.Child = new EntreeCustomizationControl(w);
+                MainWindow.Child = new CustomizationControl(w);
 
             }
         }

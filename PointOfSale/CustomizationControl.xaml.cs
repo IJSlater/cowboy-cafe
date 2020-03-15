@@ -18,10 +18,10 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for EntreeCustomizationControl.xaml
     /// </summary>
-    public partial class EntreeCustomizationControl : UserControl
+    public partial class CustomizationControl : UserControl
     {
 
-        public EntreeCustomizationControl(IOrderItem item)
+        public CustomizationControl(IOrderItem item)
         {
             InitializeComponent();
             if (item is Entree)
@@ -91,6 +91,10 @@ namespace PointOfSale
 
 
                 }
+                else
+                {
+                    throw new NotImplementedException("Menu Item not accounted for");
+                }
 
 
             }
@@ -117,6 +121,10 @@ namespace PointOfSale
                     DataContext = pdc;
                     SizeControll();
                 }
+                else
+                {
+                    throw new NotImplementedException("Menu Item not accounted for");
+                }
 
             }
             else 
@@ -127,7 +135,30 @@ namespace PointOfSale
 
 
         }
+
+
+        /// <summary>
+        /// Event handler to rigger when 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ((CheckBox)sender).GetBindingExpression(CheckBox.IsCheckedProperty).UpdateTarget();
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OrderControl orderControll = ((OrderControl)((Border)(this.Parent)).Parent);
+            orderControll.SwapScreen();
+
+        }
+
+
+
         //*****************************************************************************************************************
+        //All the fol
         private void BasicsControll()
         {
             CheckBox Bread = new CheckBox();
@@ -485,6 +516,7 @@ namespace PointOfSale
 
         //*****************************************************************************************************************
 
+
         private void SizeControll()
         {
             LeftBox.Items.Add(new ComboBox());
@@ -495,17 +527,6 @@ namespace PointOfSale
 
 
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            ((CheckBox)sender).GetBindingExpression(CheckBox.IsCheckedProperty).UpdateTarget();
-        }
 
-       
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            OrderControl orderControll = ((OrderControl)((Border)(this.Parent)).Parent);
-            orderControll.SwapScreen();
-           
-        }
     }
 }

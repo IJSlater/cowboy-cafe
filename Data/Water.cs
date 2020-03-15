@@ -28,8 +28,8 @@ namespace CowboyCafe.Data
             get { return size; }
             set
             {
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
                 size = value;
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }
 
