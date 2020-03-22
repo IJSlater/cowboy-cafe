@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Ian Slater
+* CustomizationControl
+*Class to control the customization screen for each item
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,7 +25,10 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizationControl : UserControl
     {
-
+        /// <summary>
+        /// Creates the customization screen for the given item
+        /// </summary>
+        /// <param name="item"></param>
         public CustomizationControl(IOrderItem item)
         {
             InitializeComponent();
@@ -158,7 +166,9 @@ namespace PointOfSale
 
 
         //*****************************************************************************************************************
-        //All the fol
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void BasicsControll()
         {
             CheckBox Bread = new CheckBox();
@@ -190,7 +200,9 @@ namespace PointOfSale
 
 
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void BurgerBasicsControll()
         {
             CheckBox Bun = new CheckBox();
@@ -260,7 +272,9 @@ namespace PointOfSale
             LeftBox.Items.Add(Cheese);
 
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void DoubleBurgerControll()
         {
             CheckBox Tomato = new CheckBox();
@@ -304,6 +318,9 @@ namespace PointOfSale
             RightBox.Items.Add(Mayo);
 
         }
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void TripleBurgerControll()
         {
             CheckBox Bacon = new CheckBox();
@@ -333,7 +350,9 @@ namespace PointOfSale
             LeftBox.Items.Add(Egg);
 
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void CowPokeChilliControll()
         {
             CheckBox Cheese = new CheckBox();
@@ -391,6 +410,9 @@ namespace PointOfSale
             RightBox.Items.Add(TortillaStrips);
         }
         //*****************************************************************************************************************
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void DrinkBasics()
         {
             SizeControll();
@@ -408,6 +430,9 @@ namespace PointOfSale
             BindingOperations.SetBinding(Ice, CheckBox.IsCheckedProperty, IceBinding);
             RightBox.Items.Add(Ice);
         }
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void LemonControll()
         {
             CheckBox Lemon = new CheckBox();
@@ -423,6 +448,9 @@ namespace PointOfSale
             BindingOperations.SetBinding(Lemon, CheckBox.IsCheckedProperty, LemonBinding);
             RightBox.Items.Add(Lemon);
         }
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void SweetControll()
         {
             CheckBox Sweet = new CheckBox();
@@ -439,13 +467,17 @@ namespace PointOfSale
             BindingOperations.SetBinding(Sweet, CheckBox.IsCheckedProperty, SweetBinding);
             RightBox.Items.Add(Sweet);
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void WaterControll()
         {
             LemonControll();
             DrinkBasics();
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void CowboyCoffeeControll()
         {
             DrinkBasics();
@@ -478,7 +510,9 @@ namespace PointOfSale
             RightBox.Items.Add(Decaf);
             RightBox.Items.Add(RoomForCream);
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void TexasTeaControll()
         {
             DrinkBasics();
@@ -486,7 +520,9 @@ namespace PointOfSale
             SweetControll();
 
         }
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void JerkedSodaControll()
         {
             
@@ -516,7 +552,9 @@ namespace PointOfSale
 
         //*****************************************************************************************************************
 
-
+        /// <summary>
+        /// Visual controll for the item that calls this method
+        /// </summary>
         private void SizeControll()
         {
             LeftBox.Items.Add(new ComboBox());
