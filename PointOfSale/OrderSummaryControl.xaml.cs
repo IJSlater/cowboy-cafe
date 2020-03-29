@@ -31,15 +31,19 @@ namespace PointOfSale
             
         }
 
-
-        private void ScrollBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        public void RemoveItemClicked(object sender, RoutedEventArgs e)
         {
+            ticket.SelectedItem = -1;
+
+            if (DataContext is Order order)
+            {
+                
+                ((Order)DataContext).Remove((IOrderItem)ticket.SelectedItem);
+            }
+
 
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }

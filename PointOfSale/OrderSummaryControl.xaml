@@ -16,7 +16,7 @@
 
 
         <Border BorderThickness="1" BorderBrush="Black" Margin="10,38,10,60">
-            <ListBox  HorizontalContentAlignment="Stretch"  ItemsSource="{Binding Path=Items}" SelectionChanged="ListBox_SelectionChanged" Margin="0,0,-1,-1">
+            <ListBox Name="ticket"  HorizontalContentAlignment="Stretch"  ItemsSource="{Binding Path=Items}" Margin="0,0,-1,-1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -27,8 +27,9 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock  Text="{Binding}"></TextBlock>
+                            <TextBlock  Name="ItemName" Text="{Binding}"></TextBlock>
                             <TextBlock  Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Price, StringFormat=c}"/>
                             <ListBox  BorderThickness="0" Grid.Row="1" HorizontalAlignment="Center" ItemsSource="{Binding  Path=SpecialInstructions}"/>
                         </Grid>
@@ -36,6 +37,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Border>
+        <Button   Click="RemoveItemClicked" Name="RemoveListItem" Content="Remove" Background="Red" Margin="112,548,112,2"/>
         <TextBlock Name="SubtotalTextBox"  HorizontalAlignment="Right" Margin="0,533,10,0" FontSize="20" Text="{Binding Path=Subtotal, StringFormat=c}" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="84"/>
         <TextBlock HorizontalAlignment="Left" Margin="7,534,0,0" FontSize="20"  TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="90">Subtotal</TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,-2,0,0" Text="Ticket" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>

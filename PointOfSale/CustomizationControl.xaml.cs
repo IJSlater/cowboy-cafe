@@ -154,7 +154,7 @@ namespace PointOfSale
         {
             ((CheckBox)sender).GetBindingExpression(CheckBox.IsCheckedProperty).UpdateTarget();
         }
-
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -67,6 +67,8 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem i)
         {
             items.Remove(i);
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Items"));
         }
 
 
