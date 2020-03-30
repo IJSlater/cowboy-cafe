@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using System.ComponentModel;
 using CowboyCafe.Data;
 
 namespace CowboyCafe.DataTests
 {
     public class OrderTests
     {
-        public class MockOrderItem : IOrderItem
+        public class MockOrderItem : IOrderItem, INotifyPropertyChanged
         {
-            public double Price { get; set; }
-            public double Calories { get; set; }
-            public List<String> SpecialIstructions { get; }
-
-
+            public event PropertyChangedEventHandler PropertyChanged;
+            double IOrderItem.Price { get; }
+            uint IOrderItem.Calories { get; }
+            List<String> IOrderItem.SpecialInstructions { get; }
 
 
         }
+
         [Fact]
         public void ShouldBeAbleToAddItems()
         {
@@ -41,6 +42,112 @@ namespace CowboyCafe.DataTests
 
 
         }
+
+
+
+        [Fact]
+        public void AngryChickenImplementsINotifyPropertyChanged()
+        {
+            var chicken = new AngryChicken();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+
+        [Fact]
+        public void BakedBeansImplementsINotifyPropertyChanged()
+        {
+            var chicken = new BakedBeans();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void ChiliCheeseFriesImplementsINotifyPropertyChanged()
+        {
+            var chicken = new ChiliCheeseFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void CornDodgersImplementsINotifyPropertyChanged()
+        {
+            var chicken = new CornDodgers();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void CowboyCoffeImplementsINotifyPropertyChanged()
+        {
+            var chicken = new CowboyCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void CowpokeChiliImplementsINotifyPropertyChanged()
+        {
+            var chicken = new CowpokeChili();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void DakotaDoubleBurgerImplementsINotifyPropertyChanged()
+        {
+            var chicken = new DakotaDoubleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void JerkedSodaImplementsINotifyPropertyChanged()
+        {
+            var chicken = new JerkedSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void PandeCampoImplementsINotifyPropertyChanged()
+        {
+            var chicken = new PanDeCampo();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void PecosPulledPorkImplementsINotifyPropertyChanged()
+        {
+            var chicken = new PecosPulledPork();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void RustlersRibsImplementsINotifyPropertyChanged()
+        {
+            var chicken = new RustlersRibs();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void TexasTeaImplementsINotifyPropertyChanged()
+        {
+            var chicken = new TexasTea();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void TexasTripleBurgerImplementsINotifyPropertyChanged()
+        {
+            var chicken = new TexasTripleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+        [Fact]
+        public void WaterImplementsINotifyPropertyChanged()
+        {
+            var chicken = new Water();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+
+
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForBread()
+        {
+            Object chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "Bread", () => {
+                chicken.Bread = false;
+            });
+        }
+
+
+
+
+
+
+
+
 
         [Fact]
         public void ShouldBeAbleToGetEnumerationOfItems()
@@ -80,7 +187,7 @@ namespace CowboyCafe.DataTests
                 total += price;
                 order.Add(new MockOrderItem()
                 {
-                    Price = price
+                    //Price = price
                 }
                 );
 
@@ -123,6 +230,11 @@ namespace CowboyCafe.DataTests
             );
 
         }
+
+
+
+
+
 
 
     }

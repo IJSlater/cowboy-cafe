@@ -11,7 +11,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken : Entree// INotifyPropertyChanged
+    public class AngryChicken : Entree
 
     {
 
