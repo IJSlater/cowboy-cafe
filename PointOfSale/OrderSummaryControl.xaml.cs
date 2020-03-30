@@ -31,19 +31,25 @@ namespace PointOfSale
             
         }
 
+
         public void RemoveItemClicked(object sender, RoutedEventArgs e)
         {
-            ticket.SelectedItem = -1;
+            
 
             if (DataContext is Order order)
             {
-                
-                ((Order)DataContext).Remove((IOrderItem)ticket.SelectedItem);
+                IOrderItem i = (IOrderItem)((Button)e.Source).DataContext;
+                ((Order)DataContext).Remove((IOrderItem)i);
             }
 
 
         }
 
-
+        private void ItemName_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+            IOrderItem i = (IOrderItem)((TextBlock)e.Source).DataContext;
+            var a = this.Parent;
+        }
     }
 }
