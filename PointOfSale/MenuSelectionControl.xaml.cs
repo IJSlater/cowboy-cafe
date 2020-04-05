@@ -36,14 +36,25 @@ namespace PointOfSale
 
         private void CancelOrderButon_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)((Grid)Parent).Parent).DataContext = new Order();
-           // DataContext = new Order();
-            
+            MainWindow parent = ((MainWindow)((Grid)Parent).Parent);
+            Order.OrderNumber--;
+            parent.DataContext = new Order();
+            if (parent.ordercontrol.MainWindow.Child is OrderControl)
+                return;
+            parent.ordercontrol.SwapScreen(null);
+
+
+
         }
 
         private void CompleteOrderButon_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new Order();
+            MainWindow parent = ((MainWindow)((Grid)Parent).Parent);
+            Order a = (Order)DataContext;
+            Array x = (Array)a.Items;
+            if (x.Length == 0)
+                return;
+            parent.ordercontrol.SwapScreen(new TransactionControll());
         }
     }
 }

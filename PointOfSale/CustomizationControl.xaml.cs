@@ -71,7 +71,7 @@ namespace PointOfSale
                 }
                 else
                 {
-                    throw new NotImplementedException("Menu Item not accounted for");
+                    return;
                 }
             }
             else if (item is Drink)
@@ -159,7 +159,7 @@ namespace PointOfSale
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OrderControl orderControll = ((OrderControl)((Border)(this.Parent)).Parent);
-            orderControll.SwapScreen();
+            orderControll.SwapScreen(null);
 
         }
 

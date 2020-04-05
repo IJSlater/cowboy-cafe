@@ -133,23 +133,6 @@ namespace CowboyCafe.DataTests
 
 
         [Fact]
-        public void ChangingBreadPropertyShouldInvokePropertyChangedForBread()
-        {
-            Object chicken = new AngryChicken();
-            Assert.PropertyChanged(chicken, "Bread", () => {
-                chicken.Bread = false;
-            });
-        }
-
-
-
-
-
-
-
-
-
-        [Fact]
         public void ShouldBeAbleToGetEnumerationOfItems()
         {
             var order = new Order();

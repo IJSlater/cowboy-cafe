@@ -41,7 +41,14 @@ namespace CowboyCafe.Data
 
         public static uint OrderNumber = 1;
 
-
+        public double Total 
+        {
+            get
+            {
+                double sub = Subtotal;
+                return (sub + (sub * .16));
+            }
+        }
 
         private List<IOrderItem> items = new List<IOrderItem>();
 

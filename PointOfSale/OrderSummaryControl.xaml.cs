@@ -55,12 +55,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemName_PreviewMouseDown(object sender, MouseEventArgs e)
         {
-
-            
-            
             MainWindow a = (MainWindow)((Grid)this.Parent).Parent;
             if (((TextBlock)e.Source).DataContext is IOrderItem item)
             {
+                if (item is RustlersRibs rr)
+                    return;
                 a.ordercontrol.MainWindow.Child = new CustomizationControl(item);
             }
         }

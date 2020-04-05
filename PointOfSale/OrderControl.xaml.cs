@@ -210,9 +210,12 @@ namespace PointOfSale
             }
         }
 
-        public void SwapScreen()
+        public void SwapScreen(UIElement o)
         {
-            MainWindow.Child = new OrderControl();
+            if (o == null)
+                MainWindow.Child = new OrderControl();
+            else 
+                MainWindow.Child = o;
         }
 
 

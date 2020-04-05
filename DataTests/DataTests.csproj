@@ -22,4 +22,10 @@
     <ProjectReference Include="..\PointOfSale\PointOfSale.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CashRegister">
+      <HintPath>..\..\mvvm-data-binding-IJSlater\MVVMDataBinding\CashRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
