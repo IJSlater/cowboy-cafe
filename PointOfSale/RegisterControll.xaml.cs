@@ -37,7 +37,7 @@ namespace PointOfSale
         public int Fifties { get; set; }
         public int Hundreds { get; set; }
 
-        private Double Total 
+        public Double Total 
         {
             get 
             {
@@ -49,7 +49,31 @@ namespace PointOfSale
             InitializeComponent();
             Order order = (Order)DataContext;
             var a =Parent;
-            //Total_Text.Text = order.Total.ToString("C");
+
+        }
+
+        private void Cash_Print(double input)
+        {
+            ReceiptPrinter rp = new ReceiptPrinter();
+            string receipt = "\n";
+            Order order = (Order)DataContext;
+            receipt += DateTime.Now + "\tOrder# " + Order.OrderNumber + "\n";
+            foreach (IOrderItem item in order.Items)
+            {
+                receipt += item.ToString() + "\n";
+                foreach (string instruction in item.SpecialInstructions)
+                {
+                    receipt += "\t" + instruction + "\n";
+                }
+            }
+            receipt += "-------------------------------\n";
+            receipt += "Payment Method: Cash\n";
+            receipt += "Total: " + order.Total.ToString("C")+"\n";
+            receipt += "Payed: " + input.ToString("C") + "\n";
+            receipt += "Change: " + (input-order.Total).ToString("C") + "\n";
+
+            rp.Print(receipt);
+
 
         }
 
@@ -295,7 +319,6 @@ namespace PointOfSale
         {
 
             Order order = (Order)DataContext;
-            //Total_Text.Text = order.Total.ToString("C");
             double change = Total - order.Total;
 
             if (Pennies != 0)
@@ -339,13 +362,12 @@ namespace PointOfSale
                 OrderControl parent = ((OrderControl)((Border)Parent).Parent);
                 MainWindow main = (MainWindow)((Grid)(parent.Parent)).Parent;
                 main.DataContext = new Order();
-                //Register.Text = drawer.TotalValue.ToString();
-                //parent.SwapScreen(null);
+
             }
             else
             {
                 MessageBox.Show("Change Due: " + change.ToString("C"));
-                while (change>= 0.009)
+                while (change>= 0.009999999999999999999999999999999999999)
                 {
                     if (change - 100 > 0 && drawer.Hundreds > 0)
                     {
@@ -409,8 +431,10 @@ namespace PointOfSale
                     }
                     
                 }
+
                 OrderControl parent = (OrderControl)((Border)Parent).Parent;
                 MainWindow main = (MainWindow)((Grid)(parent.Parent)).Parent;
+                Cash_Print(Total);
                 main.DataContext = new Order();
                 parent.SwapScreen(null);
 

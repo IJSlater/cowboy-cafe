@@ -30,6 +30,27 @@ namespace PointOfSale
 
         }
 
+
+        private void Credit_print()
+        {
+            ReceiptPrinter rp = new ReceiptPrinter();
+            string receipt = "\n";
+            Order order = (Order)DataContext;
+            receipt += DateTime.Now + "\tOrder# " + Order.OrderNumber + "\n";
+            foreach (IOrderItem item in order.Items)
+            {
+                receipt += item.ToString() + "\n";
+                foreach (string instruction in item.SpecialInstructions)
+                {
+                    receipt += "\t" + instruction + "\n";
+                }
+            }
+            receipt += "-------------------------------\n";
+            receipt += "Payment Method: Card\n";
+            rp.Print(receipt);
+
+        }
+
         private void Cancel_Clicked(object sender, RoutedEventArgs e)
         {
             OrderControl parent = (OrderControl)((Border)Parent).Parent;
@@ -61,6 +82,7 @@ namespace PointOfSale
                 OrderControl parent = ((OrderControl)((Border)Parent).Parent);
                 MainWindow main = (MainWindow)((Grid)(parent.Parent)).Parent;
                 main.DataContext = new Order();
+                Credit_print();
                 parent.SwapScreen(null);
             }
 
