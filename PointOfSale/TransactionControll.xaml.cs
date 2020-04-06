@@ -20,6 +20,7 @@ namespace PointOfSale
     /// </summary>
     public partial class TransactionControll : UserControl
     {
+        
         public TransactionControll()
         {
             InitializeComponent();
@@ -67,7 +68,10 @@ namespace PointOfSale
         }
         private void Cash_Clicked(object sender, RoutedEventArgs e)
         {
+            OrderControl parent = ((OrderControl)((Border)Parent).Parent);
+            parent.SwapScreen(new RegisterControll());
 
+          
 
         }
 

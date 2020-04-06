@@ -18,12 +18,12 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <Border BorderThickness="1" BorderBrush="Goldenrod" CornerRadius="50" Background="Gold" Margin="-8 0" Grid.Column="1">
-                <!--<TextBlock VerticalAlignment="Center" TextAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControll}}}"/>-->
+            <Border BorderThickness="1" Width="100"  BorderBrush="Goldenrod" Grid.ColumnSpan="3" CornerRadius="50" Background="Gold" Margin="-8 0" >
+                <TextBox Grid.ColumnSpan="2" BorderThickness="0" Background="Transparent" Grid.Row="1" FontSize="25" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControll}},Path=Denomination}"/>
 
             </Border>
             <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked" Content="-"/>
-            <!--<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControll}}, Path=Quantity}"/>-->
+            <TextBox Grid.Row="1" FontSize="25" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControll}}, Path=Quantity}"/>
             <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked" Content="+"/>
         </Grid>
     </Border>

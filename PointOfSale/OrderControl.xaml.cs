@@ -30,6 +30,7 @@ namespace PointOfSale
             InitializeComponent();  
         }
 
+        private RegisterControll registercontroll = null;
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
             AngryChicken ac = new AngryChicken();
@@ -214,7 +215,14 @@ namespace PointOfSale
         {
             if (o == null)
                 MainWindow.Child = new OrderControl();
-            else 
+            else if (o is RegisterControll)
+            {
+                if (registercontroll == null)
+                    registercontroll = new RegisterControll();
+                registercontroll.Clear_Order();
+                MainWindow.Child = registercontroll;
+            }
+            else
                 MainWindow.Child = o;
         }
 

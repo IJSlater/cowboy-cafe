@@ -22,6 +22,7 @@ namespace PointOfSale
         public CoinControll()
         {
             InitializeComponent();
+            //denominationTextBox.Text = Denomination.ToString();
         }
 
 

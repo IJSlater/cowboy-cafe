@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              Width="120" Height="120"
-             d:DesignHeight="120" d:DesignWidth="120">
+             d:DesignHeight="100" d:DesignWidth="120">
     <Border BorderBrush="Gray" BorderThickness="1" Padding="5">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -18,13 +18,13 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <Border BorderThickness="10" BorderBrush="ForestGreen" Grid.ColumnSpan="3" Background="Green"  Grid.Column="0">
-                <!--<TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControll}}}"/>-->
+            <Border BorderThickness="10" BorderBrush="DarkGreen" Grid.ColumnSpan="3" Background="Green"  Grid.Column="0">
+                <TextBox BorderThickness="0" Grid.Row="1" Background="Green" FontSize="25" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControll}},Path=Denomination}"/>
 
             </Border>
-            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked" Content="-"/>
-            <!--<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControll}}, Path=Quantity}"/>-->
-            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked" Content="+"/>
+            <Button Grid.Column="0" FontSize="10" Click="OnDecreaseClicked" Content="-" Margin="-5,50,5,0" Grid.RowSpan="2"/>
+            <TextBox FontSize="25" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControll}}, Path=Quantity}" Grid.ColumnSpan="3" Margin="34,50,34,0" Grid.RowSpan="2"/>
+            <Button Grid.Column="2" FontSize="10" Click="OnIncreaseClicked" Content="+" Margin="5,50,-5,0" Grid.RowSpan="2"/>
         </Grid>
     </Border>
 </UserControl>

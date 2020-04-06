@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,22 +10,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CashRegister;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CashControll.xaml
     /// </summary>
-    public partial class CashControll : Window
+    public partial class CashControll : UserControl
     {
-
-
-
-
         public CashControll()
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var a = (CashRegisterModelView)DataContext;
+            double total = a.TotalValue;
+
+
+            //public List<typeof(Pennoes)> = new List<T>{Pennies,};
+
+}
     }
 }
