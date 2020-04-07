@@ -26,16 +26,16 @@ namespace PointOfSale
         public int Pennies{ get; set; }
         public int Nickles { get; set; }
         public int Dimes { get; set; }
-        public int Quarters { get; set; }
-        public int HalfDollars { get; set; }
-        public int Dollars { get; set; }
-        public int Ones { get; set; }
-        public int Twos { get; set; }
+        private int Quarters { get; set; }
+        private int HalfDollars { get; set; }
+        private int Dollars { get; set; }
+        private int Ones { get; set; }
+        private int Twos { get; set; }
         public int Fives { get; set; }
-        public int Tens { get; set; }
-        public int Twenties { get; set; }
-        public int Fifties { get; set; }
-        public int Hundreds { get; set; }
+        private int Tens { get; set; }
+        private int Twenties { get; set; }
+        private int Fifties { get; set; }
+        private int Hundreds { get; set; }
 
         public Double Total 
         {
@@ -80,20 +80,35 @@ namespace PointOfSale
         public void Clear_Order()
         {
             Pennies = 0;
+            PenniesText.Text = Pennies.ToString();
             Nickles = 0;
+            NicklesText.Text = Nickles.ToString();
             Dimes = 0;
+            DimesText.Text = Dimes.ToString();
             Quarters = 0;
+            QuartersText.Text = Quarters.ToString();
             HalfDollars = 0;
+            HalfDollarsText.Text = HalfDollars.ToString();
             Dollars = 0;
+            DollarsText.Text = Dollars.ToString();
             Ones = 0;
+            OnesText.Text = Ones.ToString();
             Twos = 0;
+            TwosText.Text = Twos.ToString();
             Fives = 0;
+            FivesText.Text = Fives.ToString();
             Tens = 0;
+            TensText.Text = Tens.ToString();
             Twenties = 0;
+            TwentiesText.Text = Twenties.ToString();
             Fifties = 0;
+            FiftiesText.Text = Fifties.ToString();
             Hundreds = 0;
+            HundredsText.Text = Hundreds.ToString();
 
-    }
+            TotalBox.Text = 0.00.ToString("C");
+
+        }
 
         private void Pennies_minus(object sender, RoutedEventArgs e)
         {
@@ -348,14 +363,18 @@ namespace PointOfSale
             else if (Hundreds != 0)
                 drawer.AddBill(Bills.Hundred, Hundreds);
 
-            
-            
+
+
             if (change < 0)
             {
                 MessageBox.Show("Insuficient Funds");
                 return;
             }
-            
+            else if (change > drawer.TotalValue)
+            {
+                MessageBox.Show("Error Not enough money to break this bill");
+                return;
+            }
             else if (change == 0)
             {
                 MessageBox.Show("Sucess");
@@ -367,69 +386,69 @@ namespace PointOfSale
             else
             {
                 MessageBox.Show("Change Due: " + change.ToString("C"));
-                while (change>= 0.009999999999999999999999999999999999999)
+                while (change >= 0.009999999999999999999999999999999999999)
                 {
                     if (change - 100 > 0 && drawer.Hundreds > 0)
                     {
                         drawer.RemoveBill(Bills.Hundred, 1);
                         change -= 100;
                     }
-                    else if (change - 50 > 0 && drawer.Fifties > 0)
+                    if (change - 50 > 0 && drawer.Fifties > 0)
                     {
                         drawer.RemoveBill(Bills.Fifty, 1);
                         change -= 50;
                     }
-                    else if (change - 20 > 0 && drawer.Twenties > 0)
+                    if (change - 20 > 0 && drawer.Twenties > 0)
                     {
                         drawer.RemoveBill(Bills.Twenty, 1);
                         change -= 20;
                     }
-                    else if (change - 10 > 0 && drawer.Tens > 0)
+                    if (change - 10 > 0 && drawer.Tens > 0)
                     {
                         drawer.RemoveBill(Bills.Ten, 1);
                         change -= 10;
                     }
-                    else if (change - 5 > 0 && drawer.Fives > 0)
+                    if (change - 5 > 0 && drawer.Fives > 0)
                     {
                         drawer.RemoveBill(Bills.Five, 1);
                         change -= 5;
                     }
-                    else if (change - 1 > 0 && drawer.Ones > 0)
+                    if (change - 1 > 0 && drawer.Ones > 0)
                     {
                         drawer.RemoveBill(Bills.One, 1);
                         change -= 1;
                     }
-                    else if (change - 1 > 0 && drawer.Dollars > 0)
+                    if (change - 1 > 0 && drawer.Dollars > 0)
                     {
                         drawer.RemoveCoin(Coins.Dollar, 1);
                         change -= 1;
                     }
-                    else if (change - .50 > 0 && drawer.HalfDollars > 0)
+                    if (change - .50 > 0 && drawer.HalfDollars > 0)
                     {
                         drawer.RemoveCoin(Coins.HalfDollar, 1);
                         change -= .50;
                     }
-                    else if (change - .25 > 0 && drawer.Quarters > 0)
+                    if (change - .25 > 0 && drawer.Quarters > 0)
                     {
                         drawer.RemoveCoin(Coins.Quarter, 1);
                         change -= .25;
                     }
-                    else if (change - .10> 0 && drawer.Dimes > 0)
+                    if (change - .10 > 0 && drawer.Dimes > 0)
                     {
                         drawer.RemoveCoin(Coins.Dime, 1);
                         change -= .10;
                     }
-                    else if (change - .05 > 0 && drawer.Nickels > 0)
+                    if (change - .05 > 0 && drawer.Nickels > 0)
                     {
                         drawer.RemoveCoin(Coins.Nickel, 1);
                         change -= .05;
                     }
-                    else if (change - .01 > 0 && drawer.Pennies > 0)
+                    if (change - .01 > 0 && drawer.Pennies > 0)
                     {
                         drawer.RemoveCoin(Coins.Penny, 1);
                         change -= .01;
                     }
-                    
+
                 }
 
                 OrderControl parent = (OrderControl)((Border)Parent).Parent;

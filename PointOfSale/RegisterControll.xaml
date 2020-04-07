@@ -116,9 +116,10 @@
 
         <Button Content="Confirm"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="43" Grid.Column="2" Grid.Row="3" Click="Confirm_Click"/>
         <TextBlock VerticalAlignment="Center" Text="$0.00" Name="TotalBox" Grid.Column="3" Grid.Row="4"/>
-        <TextBlock VerticalAlignment="Center" Text="$0.00" Name="Register" Grid.Column="4" Grid.Row="4"/>
+        <TextBlock VerticalAlignment="Bottom" Text="Current" Name="Current" Grid.Column="3" Grid.Row="4"/>
 
-        
+
+
 
 
 
