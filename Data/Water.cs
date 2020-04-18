@@ -29,7 +29,8 @@ namespace CowboyCafe.Data
             set
             {
                 size = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
+                if (PropertyChanged != null)
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }
 

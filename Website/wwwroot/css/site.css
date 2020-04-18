@@ -1,6 +1,32 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
+
+/*.entress {
+    width: 55%;
+    margin-right: 2%;
+    float: left;
+}
+.sides {
+    width: 42%;
+    float: left;
+}
+.drinks {
+    float: right;
+    width: 25%;
+    height: 280px;
+}
+.Menu-items {
+    text-align: center;
+}*/
+
+
+
+
+
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;

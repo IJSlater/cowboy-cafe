@@ -27,6 +27,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public virtual IEnumerable<Size> SizeValues => Enum.GetValues(typeof(Size)).Cast<Size>();
 
+
+
         /// <summary>
         /// Gets the price of the side
         /// </summary>
@@ -36,6 +38,7 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
+
 
         public virtual List<string> SpecialInstructions { get => new List<string>(); }
     }

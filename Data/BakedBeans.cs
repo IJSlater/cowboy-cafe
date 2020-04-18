@@ -27,9 +27,13 @@ namespace CowboyCafe.Data
             set 
             {
                 size = value;
+                if(PropertyChanged!=null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Size"));
+
             }
         }
+
+
         /// <summary>
         /// Returns the items price
         /// </summary>

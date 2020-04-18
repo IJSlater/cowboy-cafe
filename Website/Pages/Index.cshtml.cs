@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using CowboyCafe.Data;
 
 namespace Website.Pages
 {
@@ -15,6 +16,11 @@ namespace Website.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+        }
+
+        public void nop()
+        { 
+        
         }
 
         public void OnGet()

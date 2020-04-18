@@ -18,4 +18,15 @@
     <None Include="wwwroot\Pictures\Chuckwagon_Texas_1900.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\PointOfSale\PointOfSale.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CowboyCafe.Data">
+      <HintPath>..\Data\bin\Debug\netcoreapp3.1\CowboyCafe.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -1,10 +1,82 @@
 ﻿@page
+@using CowboyCafe.Data
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+
+        @*<div class="Menu-items">*@
+            <div class="entrees">
+                <h2>Entrees</h2>
+                
+                @foreach (Entree entree in Menu.Entrees())
+                {
+
+                    @entree.ToString()   
+                    <span>Price: </span>@entree.Price
+                     <span>Calories: </span>@entree.Calories<br><br />
+
+                }
+            </div>
+            <div class="sides">
+                <h2>Sides</h2>
+
+                @foreach (Side sides in Menu.Sides())
+                {
+
+                    {@sides.ToString().Substring(6)}<br />
+
+                    <span>Price | Small: $</span>@sides.Price
+                    { sides.Size = Size.Medium; }
+                    <span> Medium: $</span>@sides.Price
+
+                    { sides.Size = Size.Large; }
+                    <span> Large: $</span>@sides.Price<br />
+
+
+                    { sides.Size = Size.Small; }
+                    <span>Calories | Small: </span>@sides.Calories
+                    { sides.Size = Size.Medium; }
+                    <span> Medium: </span>@sides.Calories
+                    { sides.Size = Size.Large; }
+                    <span>  Large: </span>@sides.Calories<br /><br />
+
+                }
+            </div>
+            <div class="drinks">
+                <h2>Drinks</h2>
+               
+                @foreach (Drink drinks in Menu.Drinks())
+                {
+
+                    {@drinks.ToString().Substring(6)}<br />
+                <span>Price | Small: $</span>@drinks.Price
+
+
+
+                { drinks.Size = Size.Medium; }
+                <span> Medium: $</span>@drinks.Price
+
+                { drinks.Size = Size.Large; }
+                <span> Large: $</span>@drinks.Price<br />
+
+
+                { drinks.Size = Size.Small; }
+                <span>Calories | Small: </span>@drinks.Calories
+                { drinks.Size = Size.Medium; }
+                <span> Medium: </span>@drinks.Calories
+                { drinks.Size = Size.Large; }
+                <span>  Large: </span>@drinks.Calories<br /><br />
+
+
+
+
+            }
+                @*</div>*@
+
+            </div>
+    </div>
