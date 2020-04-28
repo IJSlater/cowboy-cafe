@@ -8,8 +8,23 @@
     <div class="text-center">
         <h1 class="display-4">Welcome</h1>
         <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+        <form>
+            <input type="text" id="SearchTerms" @*value="@Model.SearchTerms"*@ />
+            <input type="submit" value="Submit" /><br>
 
-        @*<div class="Menu-items">*@
+            <span>Entree </span><input type="checkbox" id="EntreeCheck" value="@Model.EntreeCheck" />
+            <span>Drink </span><input type="checkbox" id="DrinkCheck" value="@Model.DrinkCheck" />
+            <span>Side </span><input type="checkbox" id="SideCheck" value="@Model.SideCheck" /><br>
+
+            <span>Minimum Calories </span><input class="number" type="number" id="MinCalories" value="@Model.MinCal" />
+            <span>Max Calories </span><input type="number" id="MaxCalories" value="@Model.MaxCal" /><br />
+
+            <span>Minimum Price </span><input type="number" id="MinPrice" value="@Model.MinPrice" />
+            <span>Max Price </span><input type="number" id="MaxPrice" value="@Model.MaxPrice" /><br />
+
+            
+        </form>
+        
             <div class="entrees">
                 <h2>Entrees</h2>
                 
@@ -76,7 +91,7 @@
 
 
             }
-                @*</div>*@
+                
 
             </div>
     </div>

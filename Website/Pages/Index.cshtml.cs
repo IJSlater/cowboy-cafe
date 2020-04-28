@@ -18,13 +18,29 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void nop()
-        { 
-        
-        }
+
+
+        public string SearchTerms { get; set; } = "Search for Item";
+        public bool EntreeCheck { get; set; }
+        public bool DrinkCheck { get; set; }
+        public bool SideCheck { get; set; }
+        public uint MinCal { get; set; }
+        public uint MaxCal { get; set; }
+        public double MinPrice { get; set; }
+        public double MaxPrice { get; set; }
+
+
+        public  List<IOrderItem> Entrees;
+        public  List<IOrderItem> Sides;
+        public  List<IOrderItem> Drinks;
+
 
         public void OnGet()
         {
+
+            SearchTerms = Request.Form.ToString();
+            //Entrees
+            
 
         }
     }
