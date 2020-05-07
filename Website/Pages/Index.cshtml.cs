@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using CowboyCafe.Data;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 
 namespace Website.Pages
 {
@@ -17,9 +18,9 @@ namespace Website.Pages
         {
             _logger = logger;
         }
-        public  List<IOrderItem> entrees =(List<IOrderItem>)Menu.Entrees();
-        public List<IOrderItem> sides = (List<IOrderItem>)Menu.Sides();
-        public List<IOrderItem> drinks = (List<IOrderItem>)Menu.Drinks();
+        public  IEnumerable<IOrderItem> entrees =Menu.Entrees();
+        public IEnumerable<IOrderItem> sides = Menu.Sides();
+        public IEnumerable<IOrderItem> drinks = Menu.Drinks();
         public string SearchTerms { get; set; } = "Search for Item";
         public string EntreeCheck { get; set; }
         public string DrinkCheck { get; set; }
@@ -40,9 +41,9 @@ namespace Website.Pages
         public void OnPost()
         {
 
-            entrees = (List<IOrderItem>)Menu.Entrees();
-            sides = (List<IOrderItem>)Menu.Sides();
-            drinks = (List<IOrderItem>)Menu.Drinks();
+            entrees = Menu.Entrees();
+            sides = Menu.Sides();
+            drinks = Menu.Drinks();
 
             if (Request.Form["EntreeCheck"] == "on")
                 EntreeCheck = "checked";
@@ -52,14 +53,14 @@ namespace Website.Pages
             }
 
             if (Request.Form["SideCheck"] == "on")
-                EntreeCheck = "checked";
+                SideCheck = "checked";
             else
             {
                 SideCheck = null;
             }
 
             if (Request.Form["DrinkCheck"] == "on")
-                EntreeCheck = "checked";
+                DrinkCheck = "checked";
             else
             {
                 DrinkCheck = null;
@@ -69,14 +70,20 @@ namespace Website.Pages
             MaxCal = Request.Form["MaxCalories"];
             MinPrice = Request.Form["MinPrice"];
             MaxPrice = Request.Form["MaxPrice"];
+            string hold = Request.Form["SearchTerms"];
+            if(EntreeCheck!=null)
+                entrees = from item in Menu.Entrees()
+                          where item.ToString().ToLower().Contains(hold.ToLower()) && item.Calories >= Convert.ToUInt32(Request.Form["MinCalories"]) && item.Calories <= Convert.ToUInt32(Request.Form["MaxCalories"]) && item.Price >= Convert.ToDouble(Request.Form["MinPrice"]) && item.Price <= Convert.ToDouble(Request.Form["MaxPrice"])
+                          select item;
+              if (DrinkCheck != null)
+                drinks = from item in Menu.Drinks()
+                     where item.ToString().Contains(hold.ToLower()) && item.Calories >= Convert.ToUInt32(Request.Form["MinCalories"]) && item.Calories <= Convert.ToUInt32(Request.Form["MaxCalories"]) && item.Price >= Convert.ToDouble(Request.Form["MinPrice"]) && item.Price <= Convert.ToDouble(Request.Form["MaxPrice"])
+                      select item;
 
-
-
-            entrees = Menu.FilterEntrees(Request.Form["EntreeCheck"], Request.Form["SearchTerms"], Request.Form["MinCalories"], Request.Form["MaxCalories"], Request.Form["MinPrice"], Request.Form["MaxPrice"]);
-            sides = Menu.FilterSides(Request.Form["SideCheck"], Request.Form["SearchTerms"], Request.Form["MinCalories"], Request.Form["MaxCalories"], Request.Form["MinPrice"], Request.Form["MaxPrice"]);
-            drinks = Menu.FilterDrinks(Request.Form["DrinkCheck"], Request.Form["SearchTerms"], Request.Form["MinCalories"], Request.Form["MaxCalories"], Request.Form["MinPrice"], Request.Form["MaxPrice"]);
-
-
+            if (SideCheck != null)
+                sides = from item in Menu.Sides()
+                      where item.ToString().Contains(hold.ToLower()) && item.Calories >= Convert.ToUInt32(Request.Form["MinCalories"]) && item.Calories <= Convert.ToUInt32(Request.Form["MaxCalories"]) && item.Price >= Convert.ToDouble(Request.Form["MinPrice"]) && item.Price <= Convert.ToDouble(Request.Form["MaxPrice"])
+                      select item;
         }
     }
 }

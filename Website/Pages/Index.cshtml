@@ -26,75 +26,104 @@
             <span>Max Price </span><input type="number" name="MaxPrice" value="@Model.MaxPrice" /><br />
         </form>
         <p><a href="/handlerexample" class="btn btn-default">Click to Get</a></p>
+        <div class="menu" >
+            <div class="entrees" >
+                <h2>Entrees</h2>
 
-        <div class="entrees">
-            <h2>Entrees</h2>
+                @foreach (IOrderItem entree in Model.entrees)
+                {
 
-            @foreach (IOrderItem entree in Model.entrees)
-            {
-                
 
-                @entree.ToString()
-                <span>Price: </span>@entree.Price
-                <span>Calories: </span>@entree.Calories<br><br />
+                    @entree.ToString()
+                    <span>Price: </span>@entree.Price
+                    <span>Calories: </span>@entree.Calories<br/><br/>
+
+                }
+            </div>
+            <div class="sides" >
+                <h2>Sides</h2>
+
+                @foreach (Side sides in Model.sides)
+                {
+
+                    {@sides.ToString().Substring(6)}<br />
+
+                <span>Price | Small: $</span>@sides.Price
+                { sides.Size = Size.Medium; }
+                <span> Medium: $</span>@sides.Price
+
+                { sides.Size = Size.Large; }
+                <span> Large: $</span>@sides.Price<br />
+
+
+                { sides.Size = Size.Small; }
+                <span>Calories | Small: </span>@sides.Calories
+                { sides.Size = Size.Medium; }
+                <span> Medium: </span>@sides.Calories
+                { sides.Size = Size.Large; }
+                <span>  Large: </span>@sides.Calories<br /><br />
 
             }
+            </div>
+            <div class="drinks">
+                <h2>Drinks</h2>
+
+                @foreach (Drink drinks in Model.drinks)
+                {
+
+                    {@drinks.ToString().Substring(6)}<br />
+                <span>Price | Small: $</span>@drinks.Price
+
+
+
+                { drinks.Size = Size.Medium; }
+                <span> Medium: $</span>@drinks.Price
+
+                { drinks.Size = Size.Large; }
+                <span> Large: $</span>@drinks.Price<br />
+
+
+                { drinks.Size = Size.Small; }
+                <span>Calories | Small: </span>@drinks.Calories
+                { drinks.Size = Size.Medium; }
+                <span> Medium: </span>@drinks.Calories
+                { drinks.Size = Size.Large; }
+                <span>  Large: </span>@drinks.Calories<br /><br />
+
+
+
+
+            }
+
+
+            </div>
         </div>
-        <div class="sides">
-            <h2>Sides</h2>
+        </div>
 
-            @foreach (Side sides in Model.sides)
-            {
-
-                {@sides.ToString().Substring(6)}<br />
-
-            <span>Price | Small: $</span>@sides.Price
-            { sides.Size = Size.Medium; }
-            <span> Medium: $</span>@sides.Price
-
-            { sides.Size = Size.Large; }
-            <span> Large: $</span>@sides.Price<br />
-
-
-            { sides.Size = Size.Small; }
-            <span>Calories | Small: </span>@sides.Calories
-            { sides.Size = Size.Medium; }
-            <span> Medium: </span>@sides.Calories
-            { sides.Size = Size.Large; }
-            <span>  Large: </span>@sides.Calories<br /><br />
-
+    <style>
+    .entrees {
+    float: left;
+    width: 30%;
+}
+    .sides {
+        float: left;
+        width: 30%;
+    }
+    .drinks {
+        float: left;
+        width: 30%;
+    }
+    @@media (max-width: 490px) {
+        .entrees {
+            float: none;
         }
-        </div>
-        <div class="drinks">
-            <h2>Drinks</h2>
-
-            @foreach (Drink drinks in Model.drinks)
-            {
-
-                {@drinks.ToString().Substring(6)}<br />
-            <span>Price | Small: $</span>@drinks.Price
-
-
-
-            { drinks.Size = Size.Medium; }
-            <span> Medium: $</span>@drinks.Price
-
-            { drinks.Size = Size.Large; }
-            <span> Large: $</span>@drinks.Price<br />
-
-
-            { drinks.Size = Size.Small; }
-            <span>Calories | Small: </span>@drinks.Calories
-            { drinks.Size = Size.Medium; }
-            <span> Medium: </span>@drinks.Calories
-            { drinks.Size = Size.Large; }
-            <span>  Large: </span>@drinks.Calories<br /><br />
-
-
-
-
+        .sides {
+            float: none;
         }
+        .drinks {
+            float: none;
+        }
+    }
 
 
-        </div>
-    </div>
+    </style>

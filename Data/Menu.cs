@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     public static class Menu
     {
-        private static List<IOrderItem> entrees;
-        private static List<IOrderItem> sides;
-        private static List<IOrderItem> drinks;
+        public static List<IOrderItem> entrees;
+        public static List<IOrderItem> sides;
+        public static List<IOrderItem> drinks;
 
         public static List<IOrderItem> FilterEntrees(string check, string name, string mincal,string maxcal,string minprice, string maxprice)
         {
